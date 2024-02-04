@@ -1,0 +1,55 @@
+<html>
+<head>
+	<style>
+	*{font-size:40px}
+	body{background-color:skyblue}
+	h2{border-style:ridge;width:70%;border-radius:30px}
+	</style>
+	<script>
+		function getmsg()
+		{
+			event.preventDefault();
+			let dollar=document.getElementById("dollar");
+			let ans=document.getElementById("ans");
+
+			if (dollar.value==" ")
+			{
+				alert("enter the number");
+				ans.innerHTML="";
+				dollar.focus();
+				return;
+
+			}
+			
+			let url ="https://api.exchangerate-api.com/v4/latest/USD";
+			fetch(url)
+			.then(res => res.json())
+			.then(data => {
+				let d = parseFloat(dollar.value)
+				let r = data.rates.INR;
+				let rupees = d * r;
+				let msg = "&#8377 " + rupees.toFixed(2);
+				ans.innerHTML=msg;
+
+			})
+			.catch(err => alert ("issue " +err));
+
+		}
+
+	</script>
+</head>
+
+<body>
+<center>
+	<h1> motivational message</h1>
+	<form onsubmit="getmsg()">
+		<input type="text" placeholder="enter rupees" id="dollar" required />
+		<br/>
+		<br/>
+		<input type="submit" value="convert" />
+	</form>
+	<h2 id="ans" />
+</center>
+</body>
+
+<html>

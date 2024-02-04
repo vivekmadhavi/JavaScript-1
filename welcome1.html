@@ -1,0 +1,55 @@
+<html>
+
+<head>
+	<title>welcome app by me</title>
+	<style>
+
+		*{font-size:50; font-family:calbri;}
+		body{background-color:skyblue;}
+
+	</style>
+	<script>
+		function checking()
+		{ 
+			event.preventDefault();
+			let name =document.getElementById("name");
+			let ans =document.getElementById("ans");
+			
+			if(name.value=="")
+			{
+				alert("you did not enter the name");
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+
+			let d = new Date();
+			let hr= d.getHours();
+			let msg = "";
+			if(hr>12)	msg="gm";
+			else if(hr>16)	msg="ga";
+			else 		msg="ge";
+			res= msg +" " +name.value;
+			ans.innerHTML= res;
+		}
+		
+		
+	</script>
+
+</head>
+<body>
+<center>
+	<h1>welcome again app</h1>
+	<form onsubmit="checking()">
+		<input type="text" placeholder="enter the name" id="name"/>
+		<br>
+		<br>
+		<input type="submit" />
+	</form>
+	<h2 id="ans"/>
+	
+</center>		
+	
+
+</body>
+</html>

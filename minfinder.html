@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title> minfinder </title>
+	<style>
+		*{font-size:50px;font-family:arial;}
+		body{background-color:skyblue}
+		.btn{width:10%;background-color:red;color:white:;border-radius:20px;}
+		
+	</style>
+
+	<script>
+		function minfinder()
+		{
+			event.preventDefault();
+			let n1=document.getElementById("n1");
+			let n2=document.getElementById("n2");
+			let ans=document.getElementById("ans");
+
+			let action = document.activeElement.value;
+			let num1 = parseFloat(n1.value);
+			let num2 = parseFloat(n2.value);
+
+			if (action == "m1")
+			{
+				let res = num1 < num2 ? num1 : num2;
+				let msg = "min1 ="+ res;
+				ans.innerHTML= msg;
+
+			}
+			if (action == "m2")
+			{
+				let res=0.0;
+				if(num1<num2) 	res=num1;
+				else		res=num2;
+				let msg= "min2 =" + res;
+				ans.innerHTML= msg;
+				
+
+			}	
+			else
+			{
+				let msg = "min3= " + Math.min(num1,num2);
+				ans.innerHTML=msg;
+				
+			}
+		}
+
+
+	</script>
+</head>
+
+<body>
+<center>
+	<h1>minfinder </h1>
+	<form onsubmit="minfinder()">
+		<input type="number" step="any" placeholder="enter the first number" required id="n1"/>
+		<br/><br/>
+		<input type="number" step="any" placeholder="enter the second number" required id="n2"/>
+		<br/>
+		<br/>
+		<input type="submit" value="m1" class="btn" />
+		<input type="submit" value="m2" class="btn" />
+		<input type="submit" value="m3" class="btn" />
+	</form>
+	<h2 id="ans"/>
+</center>
+</body>
+
+
+</html>

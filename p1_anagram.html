@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<title> if it is a anagram</title>
+	<style>
+		*{font-size:40px;}
+		body{background-color:skyblue;}
+	</style>
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let s1=document.getElementById("s1");
+			let s2=document.getElementById("s2");
+			let ans=document.getElementById("ans");
+
+			let ns1= s1.value.split("").sort().join("");
+			let ns2= s2.value.split("").sort().join("");
+			let msg="";
+			if(ns1 == ns2)
+				msg="yes";
+			else
+				msg="no";
+			ans.innerHTML= msg;
+		}
+
+
+	</script>
+</head>
+<body>
+<center>
+	<h1> analoge checker</h1>
+	<form onsubmit="check()" >
+	<input type="text" placeholder="enter the first name"  id="s1" required/>
+	<input type="text" placeholder="enter the second name"  id="s2" required/>
+	<br/><br/>
+	<input type="submit" />
+	</form>
+	<h2 id="ans"/>
+
+
+</body>
+</html>

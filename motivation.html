@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>motivation</title>
+	<style>
+		*{font-size:50px;font-family:Arial;}
+		body{background-color:blue;}
+		.btn{width:40%;border-radius:30px;}
+
+
+
+	</style>
+	<script>
+		function getmsg()
+		{
+			event.preventDefault();
+			let ans = document.getElementById("ans")
+			let msg =["liv ans let live " , "just do it" , "be a warrier and not worrier"]
+			let r = parseInt(Math.random() * msg.length);
+			ans.innerHTML= msg[r];
+		}
+
+	</script>
+
+
+
+
+</head>
+<body>
+<center>
+	<h1>motivation msg</h1>
+	<form onsubmit= "getmsg()" >
+	<input type="submit" value="Get msg" class="btn">
+	</form>	
+	<br/><br/>
+	<h2 id="ans"/>
+</center>
+
+
+
+
+</body>
+
+
+
+
+</html>

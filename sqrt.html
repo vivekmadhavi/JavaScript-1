@@ -1,0 +1,60 @@
+<html>
+
+<head>
+	<title>welcome app by me</title>
+	<style>
+
+		*{font-size:50; font-family:calbri;}
+		body{background-color:skyblue;}
+
+	</style>
+	<script>
+		function checking()
+		{ 
+			event.preventDefault();
+			let num=document.getElementById("num");
+			let ans =document.getElementById("ans");
+			
+			if(name.value=="")
+			{
+				alert("you did not enter the number");
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+
+			let n=parseFloat(num.value);
+
+			if(n<0)
+			{
+				alert("-v number not allowed");
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+
+			let res = n**0.5;
+			let msg ="square root=" +res.toFixed(2);
+			ans.innerHTML=msg;
+		}
+		
+		
+	</script>
+
+</head>
+<body>
+<center>
+	<h1>welcome again app</h1>
+	<form onsubmit="checking()">
+		<input type="number" step="any" placeholder="enter the number" id="num"/>
+		<br>
+		<br>
+		<input type="submit" value="find square root" />
+	</form>
+	<h2 id="ans"/>
+	
+</center>		
+	
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+	<style>
+		*{font-size:50px;font-family:Arial;}
+		body{background-color:skyblue;}
+		.btn{width:40%;border-radius:30px;}
+
+
+
+	</style>
+	<script>
+		let frds =["purva" , "vivek" ]
+		function operation()
+		{
+			event.preventDefault();
+			let action = document.activeElement.value;
+			if(action == "add")
+			{
+				let name = prompt("enetr the name to add ");
+				if (name != "")
+					frds.push(name);
+				show()
+			}
+			else if (action == "rem")
+			{
+				let name = prompt("enetr the name you want to remove");
+				let i =frds.indexOf(name);
+				if(i == -1)
+					alert(name + "not found")
+				else
+					frds.splice(i,1);
+				show();
+			}
+			
+		}
+		function show()
+		{
+
+			let ans = document.getElementById("ans")
+			ans.innerHTML=frds;
+			
+		}
+
+	</script>
+
+
+
+
+</head>
+<body>
+<center>
+	<h1>birthday app</h1>
+	<form onsubmit="operation()" >
+	<input type="submit" value="add" class="btn">
+	<input type="submit" value="rem" class="btn">
+	</form>	
+	<br/><br/>
+	<h2 id="ans"/>
+	<script>
+		show()
+	</script>
+</center>
+
+
+
+
+</body>
+
+
+
+
+</html>

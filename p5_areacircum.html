@@ -1,0 +1,49 @@
+<head>
+	<title>calsi app web site</title>
+	<style>
+	*{font-size:50px;}
+	body{background-color:blue;}
+	.btn{border-radius:20%;width:30%;}
+	.btn:hover{background-color:yellow;color:red}
+	</style>
+	<script>
+		function compute()
+		{
+			event.preventDefault();
+			let num=document.getElementById("num");
+			let ans=document.getElementById("ans");
+			let action= document.activeElement.value;
+			
+			if(num.value=="")
+			{
+				alert("you did not enter the number");
+				ans.innerHTML="";
+				num.focus();  //for arrow remain on that
+				return;
+			}
+			let n=parseInt(num.value);
+			let pi = 3.14;
+			let area = n * pi ;
+			let circum = area * 2 ;
+			let res = "area is =" + area.toFixed(2) + "    circum is= " + circum.toFixed(2);;
+			ans.innerHTML=res  ;
+			
+
+		}
+	</script>
+</head>
+
+<body>
+<center>
+	<h1>calsi app</h1>
+	<form onsubmit="compute()">
+		<input type="number"  step="any" placeholder="enter the name" id="num"/>
+		</br>
+		</br>
+		<input type="submit" value="m1" class="btn">
+
+	</form>
+	<h2 id="ans"/>
+</center>
+
+</body>

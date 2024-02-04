@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>4 web page </title>
+	<style>
+		*{font-size:50px}
+		body{background-color:skyblue;}
+	</style>
+</head>
+<body>
+<center>
+	<h1>welcome</h1>
+<script>
+	function showmsg()
+	{
+		let d=  new Date()
+		let hr= d.getHours();
+		let msg="";
+		if(hr<12)
+			msg="gm";
+		else if(hr<16)
+			msg="ga";
+		else
+			msg="ge";
+		alert(msg);
+	}
+</script>
+<form  onsubmit= "showmsg()"  >
+	<input type="submit" style="background-color:red;color:white;"/>
+</form>
+</center>
+
+</body>
+
+</html>

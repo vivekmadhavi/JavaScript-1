@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>calsi app web site</title>
+	<style>
+	*{font-size:50px;}
+	body{background-color:blue;}
+	.btn{border-radius:20%;width:30%;}
+	.btn:hover{background-color:yellow;color:red}
+	</style>
+	<script>
+		function compute()
+		{
+			event.preventDefault();
+			let num=document.getElementById("num");
+			let ans=document.getElementById("ans");
+			let action= document.activeElement.value;
+			
+			if(num.value=="")
+			{
+				alert("you did not enter the number");
+				ans.innerHTML="";
+				num.focus();  //for arrow remain on that
+				return;
+			}
+			if(action =="square")
+			{
+				let n=parseFloat(num.value);
+				let res= n**2;
+				let msg="square ="+res.toFixed(2);
+				ans.innerHTML=msg;
+			}	
+			else if(action == "cube")
+			{
+				let n=parseFloat(num.value);
+				let res= n**3;
+				let msg="cube is =" +res.toFixed(2);
+				ans.innerHTML=msg;
+			}
+			else
+			{
+				let n=parseFloat(num.value);
+
+				if(n<0)
+				{
+					alert("-v inter valid number")
+					ans.innerHTML="";
+					num.focus();
+					return;
+				}
+				let res= n**0.5;
+				let msg="square root is = "+res.toFixed(2);
+				ans.innerHTML=msg;
+			}
+
+		}
+	</script>
+</head>
+
+<body>
+<center>
+	<h1>calsi app</h1>
+	<form onsubmit="compute()">
+		<input type="number"  step="any" placeholder="enter the name" id="num"/>
+		</br>
+		</br>
+		<input type="submit" value="square" class="btn">
+		<input type="submit" value="cube" class="btn">
+		<input type="submit" value="sqrt" class="btn">
+
+	</form>
+	<h2 id="ans"/>
+</center>
+
+</body>
+
+
+
+
+</html>

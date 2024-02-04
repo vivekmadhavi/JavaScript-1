@@ -1,0 +1,80 @@
+<html>
+
+<head>
+	<title>welcome app by me</title>
+	<style>
+
+		*{font-size:50px; font-family:calbri;}
+		body{background-color:skyblue;}
+		.btn{width:20%;border-radius:30px;}
+		.btn:hover{background-color:yellow; color:red;}
+
+	</style>
+	<script>
+		function compute()
+		{ 
+			event.preventDefault(); //page will not refresh
+			let num=document.getElementById("num");
+			let ans =document.getElementById("ans");
+			let action=document.activeElement.value;
+			if(name.value=="")
+			{
+				alert("you did not enter the number");
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+			if(action =="square")
+			{
+			let n=parseFloat(num.value);
+			let res = n**2;
+			let msg ="square=" +res.toFixed(2);
+			ans.innerHTML=msg;
+			}
+			else if(action =="cube")
+			{
+			let n=parseFloat(num.value);
+			let res = n**3;
+			let msg ="cude=" +res.toFixed(2);
+			ans.innerHTML=msg;
+			}
+			else
+			{
+			let n=parseFloat(num.value);
+
+			if(n<0)
+			{
+				alert("-v number not allowed");
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+
+			let res = n**0.5;
+			let msg ="square root=" +res.toFixed(2);
+			ans.innerHTML=msg;
+			}
+		}
+		
+		
+	</script>
+
+</head>
+<body>
+<center>
+	<h1>calci app</h1>
+	<form onsubmit="compute()">
+		<input type="number" step="any" placeholder="enter the number" id="num"/>
+		<br>
+		<br>
+		<input type="submit" value="square" class="btn" />
+		<input type="submit" value="cude" class="btn"/>
+		<input type="submit" value="sqrt" class="btn"/>
+	</form>
+	<h2 id="ans"/>
+	
+</center>		
+	
+
+</body>
+</html>

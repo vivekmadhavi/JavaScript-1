@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>app by vivek</title>
+	<style>
+		*{font-size:50px}
+		body{background-color:skyblue;}
+		.nav{background-color:black}
+		.nav a{text-decoration:none;margin:50px}
+	</style>
+</head>
+<body>
+<center>
+	<div class="nav">
+		<a href ="index.html">home</a>
+		<a href="about.html">about</a>
+	</div>
+	<h1>result page</h1>
+	<h2 id="ans"/>
+	<script>
+		let ans =document.getElementById("ans");
+		let res=localStorage.getItem("res");
+		if(res==null)
+		{
+			//window.location.href="index.html";
+			ans.innerHTML="what man acting smart???";
+		}
+		else
+		{
+			ans.innerHTML ="square =" +res;
+
+		}
+
+	</script>
+	
+
+</center>
+</body>
+</html>

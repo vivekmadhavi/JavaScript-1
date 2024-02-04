@@ -1,0 +1,26 @@
+<html>
+
+<head>
+	<title>my first web app</title>
+</head>
+
+<body>
+	<h1>welcome to my app</h1>
+	<h2 id ="ans" style="color:red;"></h2>
+	<script>
+		let ans= document.getElementById("ans")
+		let d = new Date();
+		let hr = d.getHours();
+		let msg="";
+		if (hr < 12)
+			msg="good marning";
+		else if(hr<16)
+			msg="good afternoon";
+		else
+			msg="good evening";
+		ans.innerHTML= msg;
+
+	</script>
+
+</body>
+</html>

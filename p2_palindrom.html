@@ -1,0 +1,40 @@
+<html>
+
+<head>
+	<title> if it is a palindrom</title>
+	<style>
+		*{font-size:40px;}
+		body{background-color:skyblue;}
+	</style>
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let s1=document.getElementById("s1");
+			let ans=document.getElementById("ans");
+
+			let ns1= s1.value.split("").reverse().join("");
+			let msg="";
+			if(s1.value == ns1)
+				msg="yes";
+			else
+				msg="no";
+			ans.innerHTML= msg;
+		}
+
+
+	</script>
+</head>
+<body>
+<center>
+	<h1> palindrome checker</h1>
+	<form onsubmit="check()" >
+	<input type="text" placeholder="enter the  name"  id="s1" required/>
+	<br/><br/>
+	<input type="submit" value="check" />
+	</form>
+	<h2 id="ans"/>
+</center>
+
+</body>
+</html>

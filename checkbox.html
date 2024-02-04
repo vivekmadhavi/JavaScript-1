@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<title> if it is a anagram</title>
+	<style>
+		*{font-size:40px;}
+		body{background-color:skyblue;}
+		input[type=radio]{
+			border=:0px;
+			width:2%;
+			height:0.5rem;
+
+		}
+	</style>
+	<script>
+		let find = () =>
+		{
+			event.preventDefault();
+			let name = document.getElementById("name");
+			let ni = document.getElementById("ni");
+			let si = document.getElementById("si");
+			let co = document.getElementById("co");
+			let ans = document.getElementById("ans");
+
+			let food= "";
+			if(ni.checked) 			food="north indian";
+			else if(si.checked) 		food="south indian";
+			else				food="continental";
+						
+			let msg = "name = " + name.value + " fav food= " + food;
+			ans.innerHTML= msg;
+		}
+
+
+	</script>
+</head>
+<body>
+<center>
+	<h1> favorite food</h1>
+	<form onsubmit="find()" >
+	<input type="text" placeholder="enter the first name"  id="name" required/>
+	<br/><br/>
+	<input type="checkbox" name="f"  id="ni" checked=true /> North Indian
+	<input type="checkbox" name="f"  id="si"  /> south Indian
+	<input type="checkbox" name="f"  id="co"  /> continental
+	<br/><br/>
+	<input type="submit" />
+	</form>
+	<h2 id="ans"/>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>temperature converter</title>
+	<style>
+	*{font-size:40px}
+	body{background-color:skyblue;}
+	</style>
+</head>
+
+<body>
+<center>
+	<h1>currency converter<h1>
+	<form>
+		$<input type="number" step="any" placeholder="amt in $" id="cel">
+		<br/>
+		<br/>
+		₹<input type="number" step="any" placeholder="amt in rs" id="feh">
+	</form>
+	<script>
+		let cel =document.getElementById("cel");
+		let feh =document.getElementById("feh");
+
+		cel.addEventListener("input", function(){
+			let c = parseInt(cel.value);
+			let f = c*80;
+			feh.value = f.toFixed(2);
+		});
+
+		feh.addEvenListener("input", function(){
+			let f = parseInt(cel.value);
+			let c = f/80;
+			cel.value = c.toFixed(2);
+		});
+
+	</script>
+	
+
+</center>
+
+</body>
+
+
+</html>

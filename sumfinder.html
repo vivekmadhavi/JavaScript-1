@@ -1,0 +1,82 @@
+<html>
+<head>
+	<title> minfinder </title>
+	<style>
+		*{font-size:50px;font-family:arial;}
+		body{background-color:skyblue}
+		.btn{width:10%;background-color:red;color:white:;border-radius:20px;}
+		
+	</style>
+
+	<script>
+		function sumfinder()
+		{
+			event.preventDefault();
+			let num=document.getElementById("num");
+			let ans=document.getElementById("ans");
+
+			let action = document.activeElement.value;
+			let n = parseFloat(num.value);
+
+			if (action == "m1")
+			{
+				//while loop 
+				let i=1, sum=0.0
+				while(i<=n)
+				{
+					sum= sum +i;
+					i++;
+				}
+				let msg= "sum1 =" + sum;
+				ans.innerHTML= msg;
+			}
+			else if (action == "m2")
+			{
+				//do while loop -->exit controlled
+				let i=1, sum=0.0;
+				do
+				{
+					sum= sum +i;
+					i++;
+				} while(i<=n);
+				let msg= "sum2 =" + sum;
+				ans.innerHTML= msg;
+				
+
+			}	
+			else
+			{
+				//for loop
+				let sum=0.0;
+				for(let i=1; i<=n; i++)
+				{
+					sum= sum + i;
+				}
+				let msg = "sum3 =" + sum;
+				ans.innerHTML=msg;
+				
+			}
+			
+		}
+
+
+	</script>
+</head>
+
+<body>
+<center>
+	<h1>sumfinder </h1>
+	<form onsubmit="sumfinder()">
+		<input type="number" step="any" placeholder="enter the first number" required id="num"/>
+		<br/>
+		<br/>
+		<input type="submit" value="m1" class="btn" />
+		<input type="submit" value="m2" class="btn" />
+		<input type="submit" value="m3" class="btn" />
+	</form>
+	<h2 id="ans"/>
+</center>
+</body>
+
+
+</html>
